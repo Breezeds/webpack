@@ -1,0 +1,15 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Breezeds/webpack.git",
+  "author": "wangHaiYuan <haiyuan1.wang@percent.cn>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.my.js"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
