@@ -6,10 +6,13 @@
   "author": "wangHaiYuan <haiyuan1.wang@percent.cn>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.config.my.js"
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack-dev-server"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^4.4.1",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
