@@ -21,8 +21,7 @@ module.exports = {
         // open: true,                                 // 自动打开浏览器
         progress: true,                             // 显示打包进度
     },
-    mode: 'development',                             // 默认两种：development 和 production; 
-                                                    // development 不会走optimization优化，production才会走optimization优化
+    mode: 'production',                            // 默认两种：development 和 production
     entry: './src/index.js',                        // 入口
     output: {
         filename: 'bundle.[hash:8].js',             // 打包后的文件名 [hash:8] 8位hash值，避免缓存的问题
@@ -92,27 +91,6 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.js/i,
-                exclude: '/(node_modules|brower_components)/',
-                include: path.resolve(__dirname, 'src'),
-                use: [
-                    {
-                        loader: 'babel-loader', // 将 es6 转化为 es5   url: https://www.npmjs.com/package/babel-loader
-                        options: {
-                            presets:['@babel/preset-env'],
-                            plugins: [
-                                ["@babel/plugin-proposal-decorators", { "legacy": true }], // https://babeljs.io/docs/en/babel-plugin-proposal-decorators
-                                ["@babel/plugin-proposal-class-properties", { "loose": true }], //https://babeljs.io/docs/en/next/babel-plugin-proposal-class-properties.html
-                                "@babel/plugin-transform-runtime" // https://babeljs.io/docs/en/babel-plugin-transform-runtime#docsNav
-                            ]
-                        }
-                    }
-                ]
-            },
-            {
-                // eslint-loader // https://www.npmjs.com/package/eslint-loader
             }
         ]
     }
