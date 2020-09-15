@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');   // html 插件，类
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 抽离 css 为一个文件，用 link 引入
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 压缩 css 代码
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const { resolve } = require('path');
+const Webpack = require('webpack');
 
 console.log(path.resolve(__dirname, 'dist'));       // c:\ywcx\mine\lesson\webpack\webpack\dist
 console.log(path.resolve('dist'));                  // c:\ywcx\mine\lesson\webpack\webpack\dist
@@ -40,8 +42,14 @@ module.exports = {
                 collapseWhitespace: true            // 压缩为一行显示
             },
             hash: true                              // 哈希，避免缓存的问题
+        }),
+        new Webpack.ProvidePlugin({                 // 在每个模块中，都注入 $ ,window.$是undefined
+            $: 'jquery'
         })
     ],
+    externals: {                                    // 忽略jQuery，打包后的包会变小
+        jquery: "$"
+    },
     module: {                                       // 模块
         rules: [                                    // 规则
             // css-loader 解析 @import 这种语法
@@ -111,6 +119,13 @@ module.exports = {
                     }
                 ]
             },
+            // {
+            //     test: require.resolve('jquery'),
+            //     loader: 'expose-loader',
+            //     options: {
+            //         exposes: ['$', 'jQuery']
+            //     }
+            // },
             {
                 // eslint-loader // https://www.npmjs.com/package/eslint-loader
             }
