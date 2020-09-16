@@ -4,3 +4,9 @@ body {
     background-color: red;
     transform: rotate(45deg);
 }
+
+.box {
+    width: 200px;height: 200px;
+    background: url(./1.png) no-repeat center;
+    background-size: contain;
+}

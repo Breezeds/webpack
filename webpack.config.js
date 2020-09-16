@@ -119,6 +119,21 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.(png|jpg|gif)/i,
+                use: { 
+                    loader: 'url-loader',  // 当图片size小于限定值时，图片转化为base64格式，减少tcp请求，大于限定值，转化为图片路径
+                    options: {
+                        limit: 1000*1024 // 1000k
+                    }
+                }
+            },
+            // {
+            //     test: /.(png|jpg|gif)/i,
+            //     use: {
+            //         loader: 'file-loader',
+            //     }
+            // },
             // {
             //     test: require.resolve('jquery'),
             //     loader: 'expose-loader',
