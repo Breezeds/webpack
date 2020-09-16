@@ -29,10 +29,12 @@ module.exports = {
     output: {
         filename: 'bundle.[hash:8].js',             // 打包后的文件名 [hash:8] 8位hash值，避免缓存的问题
         path: path.resolve(__dirname, 'build'),     // path 是 node 的内置模块，resolve 可以将相对路径解析为绝对路径
+        publicPath: 'https://1-dimension.com'       // 需要设置cdn访问目录，或者，设置css，js，img的公共目录
+                                                    // 脚手架中打包时，一般设置为 publicPath: './'
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'main.css'
+            filename: 'css/main.css'                // 打包后的文件名为main.css , 目录为css/
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',           // 模板路径
@@ -68,7 +70,7 @@ module.exports = {
                         //     insert: 'top'
                         // }
                     },
-                    'css-loader',           // 解析 @import 语法
+                    'css-loader',                       // 解析 @import 语法
                     {
                         loader: 'postcss-loader',        // 自动添加前缀, 先加前缀，再进行css-loader
                         options: {
@@ -124,7 +126,10 @@ module.exports = {
                 use: { 
                     loader: 'url-loader',  // 当图片size小于限定值时，图片转化为base64格式，减少tcp请求，大于限定值，转化为图片路径
                     options: {
-                        limit: 1000*1024 // 1000k
+                        // limit: 1000*1024, // 1000k
+                        limit: 1, // 1bit
+                        outputPath: 'img/', //打包后，图片的输出目录
+                        publicPath: 'https://img.com',  // 设置img的域名为https://img.com，脚手架中一般设置为publicPath: './'
                     }
                 }
             },

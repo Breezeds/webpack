@@ -3564,6 +3564,18 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 
 /***/ }),
 
+/***/ "./src/1.png":
+/*!*******************!*\
+  !*** ./src/1.png ***!
+  \*******************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"img/35f5632420632c61aa5270c99c5521f6.png\");\n\n//# sourceURL=webpack:///./src/1.png?");
+
+/***/ }),
+
 /***/ "./src/a.js":
 /*!******************!*\
   !*** ./src/a.js ***!
@@ -3594,7 +3606,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ \"jquery\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar _class, _temp;\n\n// import $ from 'expose-loader?exposes[]=$&exposes[]=jQuery!jquery';\n// expose-loader 暴露全局的 loader 内联的 loader\n// pre 前面执行的 loader  normal 普通loader 内联loader \n// 后置 postloader\n// import $ from 'jquery';\n// console.log('$ :>> ', $);\n// console.log('window.$ :>> ', window.$);\n// console.log('$ :>> ', $);\n// console.log('window.$ :>> ', window.$);\n\nconsole.log('14 $ :>> ', jquery__WEBPACK_IMPORTED_MODULE_1___default.a);\nconsole.log('15 window.$ :>> ', window.$);\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n__webpack_require__(/*! ./index.less */ \"./src/index.less\");\n\nvar str = __webpack_require__(/*! ./a.js */ \"./src/a.js\"); // console.log('webpack first!');\n\n\nconsole.log('str :>> ', str);\n\nvar fn = function fn() {\n  console.log('fn');\n};\n\nfn();\n\nvar A = log(_class = (_temp = function A() {\n  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, A);\n\n  this.a = 1;\n}, _temp)) || _class;\n\nvar a = new A();\nconsole.log('a :>> ', a.a);\n\nfunction log(target) {\n  console.log('target :>> ', target);\n}\n\n\"foobar\".includes(\"foo\");\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _1_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./1.png */ \"./src/1.png\");\n\n\nvar _class, _temp;\n\n// webpack 打包图片\n// 1)在js中创建图片来引入\n// file-loader 默认在内部生成一张图片，到build目录下\n// 把生成的图片的名字返回来\n// 也可以使用url-loader\n // 把图片引入，返回的结果是一个新的图片地址\n\nvar image = new Image(); // image.src = './1.png'; // 就是一个普通的字符串, 不能这样写\n\nimage.src = _1_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; // 正确写法\n\ndocument.body.appendChild(image); // 2)在css中引入，background: url()\n// 3)<img src=\"\" />\n// 1. import $ from 'expose-loader?exposes[]=$&exposes[]=jQuery!jquery';\n//      expose-loader 暴露全局的 loader 内联的 loader\n//      pre 前面执行的 loader  normal 普通loader 内联loader \n//      后置 postloader\n// 2.import $ from 'jquery';\n//      console.log('$ :>> ', $);\n//      console.log('window.$ :>> ', window.$);\n// 3.console.log('$ :>> ', $);\n//      console.log('window.$ :>> ', window.$);\n// import $ from 'jquery';\n// console.log('14 $ :>> ', $);\n// console.log('15 window.$ :>> ', window.$);\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n__webpack_require__(/*! ./index.less */ \"./src/index.less\");\n\nvar str = __webpack_require__(/*! ./a.js */ \"./src/a.js\"); // console.log('webpack first!');\n\n\nconsole.log('str :>> ', str);\n\nvar fn = function fn() {\n  console.log('fn');\n};\n\nfn();\n\nvar A = log(_class = (_temp = function A() {\n  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, A);\n\n  this.a = 1;\n}, _temp)) || _class;\n\nvar a = new A();\nconsole.log('a :>> ', a.a);\n\nfunction log(target) {\n  console.log('target :>> ', target);\n}\n\n\"foobar\".includes(\"foo\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -3606,17 +3618,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bab
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/index.less?");
-
-/***/ }),
-
-/***/ "jquery":
-/*!********************!*\
-  !*** external "$" ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = $;\n\n//# sourceURL=webpack:///external_%22$%22?");
 
 /***/ })
 
